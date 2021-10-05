@@ -1,5 +1,5 @@
 {
-      "name": "TodokiRobot",
+      "name": "lunarobot",
       "description": "Telegram group management bot.",
       "logo": "https://telegra.ph/file/0c2a666a4d94ad1616593.jpg",
       "keywords": [
@@ -9,7 +9,7 @@
          "manager",
          "innexi"
       ],   
-   "repository": "https://github.com/knsgnwn/TodorokiRobot.git",
+   "repository": "https://github.com/zeinzo/LunaRobotV2.git",
    "addons": [
       {
          "options": {
