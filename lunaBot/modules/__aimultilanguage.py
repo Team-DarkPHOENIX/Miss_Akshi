@@ -1,73 +1,55 @@
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
+#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
+#    This programme is a part of lunabot (TG bot) project
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    Kang with the credits
+#    Special credits to @AmarnathCdj
 import re
 
 import emoji
+import requests
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
-import re
-import aiohttp
-from googletrans import Translator as google_translator
+from google_trans_new import google_translator
 from pyrogram import filters
-from lunaBot import BOT_ID
-from lunaBot.helper_extra.aichat import add_chat, get_session, remove_chat
-from lunaBot.pyrogramee.inlinehelper import arq
-from lunaBot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from lunaBot.pyrogramee.pyrogram import pbot as luna
+
+from luna import BOT_ID
+from luna.helper_extra.aichat import add_chat, get_session, remove_chat
+from luna.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from luna import pbot as lunabot
 
 translator = google_translator()
-
-
-async def lunaQuery(query: str, user_id: int):
-    luna = await arq.luna(query, user_id)
-    return luna.result
 
 
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
-async def fetch(url):
-    try:
-        async with aiohttp.Timeout(10.0):
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url) as resp:
-                    try:
-                        data = await resp.json()
-                    except:
-                        data = await resp.text()
-            return data
-    except:
-        print("AI response Timeout")
-        return
-
-
-luna_chats = []
+lunabot_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 
-@luna.on_message(
-    filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
-)
+@lunabot.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
-    global luna_chats
+    global lunabot_chats
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/chatbot on` and `/chatbot off` only" 
-        ) 
+            "I only recognize `/chatbot on` and /chatbot `off only`"
+        )
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
     chat_id = message.chat.id
@@ -75,20 +57,20 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("luna AI already activated in this chat")
+            await lel.edit("lunabot AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"luna AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"lunabot AI Successfully Added For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("luna AI Was Not Activated In This Chat")
+            await lel.edit("lunabot AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"luna AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"lunabot AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -100,51 +82,50 @@ async def hmm(_, message):
         message.continue_propagation()
     else:
         await message.reply_text(
-            "I only recognize `/chatbot on` and `/chatbot off` only"
-       ) 
+            "I only recognize `/chatbot on` and /chatbot `off only`"
+        )
 
 
-@luna.on_message(
-    filters.text
-    & filters.reply
-    & ~filters.bot
-    & ~filters.edited
-    & ~filters.via_bot
-    & ~filters.forwarded,
+@lunabot.on_message(
+    filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
 async def hmm(client, message):
     if not get_session(int(message.chat.id)):
-        return
-    if not message.reply_to_message:
-        return
-    try:
-        senderr = message.reply_to_message.from_user.id
-    except:
-        return
-    if senderr != BOT_ID:
-        return
+        message.continue_propagation()
+    if message.reply_to_message.from_user.id != BOT_ID:
+        message.continue_propagation()
     msg = message.text
     chat_id = message.chat.id
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("Luna", "luna")
-        test = test.replace("Aco", "luna")
-        response = await lunaQuery(
-            test, message.from_user.id if message.from_user else 0
-        )
-        response = response.replace("Who made you?", "I was created by @tdrki_1")
-        response = response.replace("Where do you come from?", "I'm from @lunasupportgrup, you have to join")
-
-        pro = response
+        test = test.replace("lunabot", "Aco")
+        test = test.replace("lunabot", "Aco")
+        querystring = {
+            "bid": "178",
+            "key": "sX5A2PcYZbsN5EY6",
+            "uid": "mashape",
+            "msg": {test},
+        }
+        headers = {
+            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        result = response.text
+        result = result.replace('{"cnt":"', "")
+        result = result.replace('"}', "")
+        result = result.replace("Aco", "lunabot")
+        result = result.replace("<a href=\\", "<a href =")
+        result = result.replace("<\/a>", "</a>")
+        pro = result
         try:
-            await luna.send_chat_action(message.chat.id, "typing")
+            await lunabot.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
-        except CFError:
-            return
-
+        except CFError as e:
+            print(e)
     else:
         u = msg.split()
         emj = extract_emojis(msg)
@@ -174,46 +155,44 @@ async def hmm(client, message):
         else:
             rm = msg
             # print (rm)
-        try:
             lan = translator.detect(rm)
-            lan = lan.lang
-        except:
-            return
         test = rm
         if not "en" in lan and not lan == "":
-            try:
-                test = translator.translate(test, dest="en")
-                test = test.text
-            except:
-                return
+            test = translator.translate(test, lang_tgt="en")
+
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("Luna", "luna")
-        test = test.replace("Aco", "luna")
-        response = await lunaQuery(
-            test, message.from_user.id if message.from_user else 0
-        )
-        response = response.replace("Who is your boyfriend?", "My boyfriend @tdrki_1 i love him so much")
-        response = response.replace("Are you married?", "@tdrki_1 he hasn't declared marriage to me")
-        response = response.replace("Who made you?", "I was created by @tdrki_1")
-        response = response.replace("Where do you live?", "I live with my creator at @lunasupportgrup you can join there.")
-        pro = response
+        # Kang with the credits bitches @InukaASiTH
+        test = test.replace("lunabot", "Aco")
+        test = test.replace("lunabot", "Aco")
+        querystring = {
+            "bid": "178",
+            "key": "sX5A2PcYZbsN5EY6",
+            "uid": "mashape",
+            "msg": {test},
+        }
+        headers = {
+            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        result = response.text
+        result = result.replace('{"cnt":"', "")
+        result = result.replace('"}', "")
+        result = result.replace("Aco", "lunabot")
+        result = result.replace("<a href=\\", "<a href =")
+        result = result.replace("<\/a>", "</a>")
+        pro = result
         if not "en" in lan and not lan == "":
-            try:
-                pro = translator.translate(pro, dest=lan)
-                pro = pro.text
-            except:
-                return
+            pro = translator.translate(pro, lang_tgt=lan[0])
         try:
-            await luna.send_chat_action(message.chat.id, "typing")
+            await lunabot.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
-        except CFError:
-            return
+        except CFError as e:
+            print(e)
 
 
-@luna.on_message(
-    filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
-)
+@lunabot.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -246,48 +225,50 @@ async def inuka(client, message):
     else:
         rm = msg
         # print (rm)
-    try:
         lan = translator.detect(rm)
-        lan = lan.lang
-    except:
-        return
     test = rm
     if not "en" in lan and not lan == "":
-        try:
-            test = translator.translate(test, dest="en")
-            test = test.text
-        except:
-            return
+        test = translator.translate(test, lang_tgt="en")
 
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("luna", "Aco")
-    test = test.replace("luna", "Aco")
-
-    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "luna")
-    response = response.replace("aco", "luna")
-
-    pro = response
+    test = test.replace("lunabot", "Aco")
+    test = test.replace("lunabot", "Aco")
+    querystring = {
+        "bid": "178",
+        "key": "sX5A2PcYZbsN5EY6",
+        "uid": "mashape",
+        "msg": {test},
+    }
+    headers = {
+        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    result = response.text
+    result = result.replace('{"cnt":"', "")
+    result = result.replace('"}', "")
+    result = result.replace("Aco", "lunabot")
+    result = result.replace("<a href=\\", "<a href =")
+    result = result.replace("<\/a>", "</a>")
+    pro = result
     if not "en" in lan and not lan == "":
-        pro = translator.translate(pro, dest=lan)
-        pro = pro.text
+        pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await luna.send_chat_action(message.chat.id, "typing")
+        await lunabot.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except CFError:
-        return
+    except CFError as e:
+        print(e)
 
 
-@luna.on_message(
-    filters.regex("luna|alo|kiw|sayang|rizky|who made you?")
+@lunabot.on_message(
+    filters.regex("lunabot|luna|sammy|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
     & ~filters.channel
-    & ~filters.edited
 )
 async def inuka(client, message):
     msg = message.text
@@ -321,46 +302,38 @@ async def inuka(client, message):
     else:
         rm = msg
         # print (rm)
-    try:
         lan = translator.detect(rm)
-        lan = lan.lang
-    except:
-        return
     test = rm
     if not "en" in lan and not lan == "":
-        try:
-            test = translator.translate(test, dest="en")
-            test = test.text
-        except:
-            return
+        test = translator.translate(test, lang_tgt="en")
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("luna", "Aco")
-    test = test.replace("luna", "Aco")
-    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Who made you?", "I was created by @tdrki_1")
-    response = response.replace("aco", "luna")
-
-    pro = response
+    # Kang with the credits bitches @InukaASiTH
+    test = test.replace("lunabot", "Aco")
+    test = test.replace("lunabot", "Aco")
+    querystring = {
+        "bid": "178",
+        "key": "sX5A2PcYZbsN5EY6",
+        "uid": "mashape",
+        "msg": {test},
+    }
+    headers = {
+        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    result = response.text
+    result = result.replace('{"cnt":"', "")
+    result = result.replace('"}', "")
+    result = result.replace("Aco", "lunabot")
+    result = result.replace("<a href=\\", "<a href =")
+    result = result.replace("<\/a>", "</a>")
+    pro = result
     if not "en" in lan and not lan == "":
-        try:
-            pro = translator.translate(pro, dest=lan)
-            pro = pro.text
-        except Exception:
-            return
+        pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await luna.send_chat_action(message.chat.id, "typing")
+        await lunabot.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except CFError:
-        return
-
-
-__help__ = """
-*──「 Help for the Chatbot module 」──*
-• luna is the only ai system which can detect & reply upto 200 language's
-✪ /chatbot [ON/OFF]: Enables and disables AI Chat mode.
-✪ /chatbot EN : Enables English only chatbot.
-"""
-
-__mod_name__ = "Chatbot"
+    except CFError as e:
+        print(e)
