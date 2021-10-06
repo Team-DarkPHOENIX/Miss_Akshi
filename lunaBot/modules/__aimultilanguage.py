@@ -25,10 +25,10 @@ url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from luna import BOT_ID
-from luna.helper_extra.aichat import add_chat, get_session, remove_chat
-from luna.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from luna import pbot as lunabot
+from lunaBot import BOT_ID
+from lunaBot.helper_extra.aichat import add_chat, get_session, remove_chat
+from lunaBot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from lunaBot import pbot as lunabot
 
 translator = google_translator()
 
