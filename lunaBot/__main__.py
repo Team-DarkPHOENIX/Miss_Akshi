@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-TODOROKI_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
+LUNA_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
 
 PM_START_TEXT = """
 [🌻](https://telegra.ph/file/e38e9af544bafa53a3b3b.jpg) `ʜᴀɪ ᴛʜᴇʀᴇ ɪ'ᴍ` [ʟᴜɴᴀ.](https://t.me/lunatapibot)
@@ -218,12 +218,12 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            TODOROKI_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            LUNA_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/todorokisupportgrup")]]
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/lunasupportgroup")]]
             ),
         )
         
