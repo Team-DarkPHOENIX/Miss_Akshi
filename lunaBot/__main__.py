@@ -72,27 +72,20 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-TODOROKI_IMG = "https://telegra.ph/file/8e5e686d37a4837249808.jpg"
+TODOROKI_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
 
-PM_START_TEXT = """**⎾[ᴛᴏᴅᴏʀᴏᴋɪXʀᴏʙᴏᴛ](https://telegra.ph/file/5ce95303acdb5846cf4aa.jpg)⏌**
-╔════════════════════════
-║Todoroki is a group manager who will
-║help you manage groups
-╠════════════════════════
-║Click the button below to learn more 
-║how to use me.
-╚════════════════════════
+PM_START_TEXT = """
+[🌻](https://telegra.ph/file/e38e9af544bafa53a3b3b.jpg) `ʜᴀɪ ᴛʜᴇʀᴇ ɪ'ᴍ` [ʟᴜɴᴀ.](https://t.me/lunatapibot)
+════════════════════════
+`ʟᴜɴᴀ ɪs sᴘᴇᴄɪᴀʟʟʏ ᴍᴀᴅᴇ ʙʏ` [ᴢᴇɪɴᴢᴏ](https://t.me/zeinzo_1) `ᴛᴏ ᴋᴇᴇᴘ ᴡᴏᴍᴇɴ ᴀᴡᴀʏ ғʀᴏᴍ ᴛʜᴇ ᴍɪʟʟɪᴏɴs ᴏғ ʙᴀᴅ ɢᴜʏs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ`
+════════════════════════
+`Click the button below to learn more how to use me.`
+════════════════════════
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➕ ᴀᴅᴅ ᴛᴏᴅᴏʀᴏᴋɪ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="http://t.me/todorokiXrobot?startgroup=true"),
-    ],
-    [
-        InlineKeyboardButton(text="sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"https://www.Xhamster.com"),
-        InlineKeyboardButton(
-            text="ᴍᴜꜱɪᴄ ᴘʟᴀʏᴇʀ", url=f"https://t.me/todorokiproject/49"
-        ),
+        InlineKeyboardButton(text="➕ ᴀᴅᴅ ʟᴜɴᴀ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="http://t.me/lunatapibot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="luna_"),
@@ -114,7 +107,8 @@ HELP_STRINGS = """
 
 
 DONATE_STRING = """Hehe, senang mendengar Anda ingin menyumbang!
- @tdrki_1 ❤️"""
+ [klick disini](https://t.me/zeinzo_1) ❤️
+"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -361,21 +355,28 @@ def luna_about_callback(update, context):
     query = update.callback_query
     if query.data == "luna_":
         query.message.edit_text(
-            text=""" **ᴛᴏᴅᴏʀᴏᴋɪXʀᴏʙᴏᴛ** - A bot to manage your groups with additional features!
-            \nHere's the basic help regarding use of Tᴏᴅᴏʀᴏᴋɪ.
-            
-            \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
-            \nReport error/bugs click the Button""",
+            text="""   ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ.
+                 \n I can restrict users.
+                 \n I can greet users with customizable welcome messages and even set a group's rules.
+                 \n I have an advanced anti-flood system.
+                 \n I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 \n I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 \n I check for admins' permissions before executing any command and more stuffs
+                 \n\n_Luna's licensed under the GNU General Public License v3.0_
+                 \n❍ Awesome Bots @aboutraks
+                 \n❍ Support Group @lunasupportgroup
+                 \n❍ Assistant @LunaAssistant.
+                 \nHere is the 💾[Repository.](https://github.com/zeinzo)""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ", url="t.me/todorokisupportgrup"
+                            text="Bᴜɢ'ꜱ", url="t.me/lunasupportgroup"
                         ),
                         InlineKeyboardButton(
-                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/todorokiproject"
+                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/aboutraks"
                         ),
                     ],
                     [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_back")],
@@ -421,7 +422,7 @@ def luna_about_callback(update, context):
     elif query.data == "luna_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
-            f"\nCongragulations, Todoroki now ready to manage your group."
+            f"\nCongragulations, Luna now ready to manage your group."
             f"\n\n*Admin Tools*"
             f"\nBasic Admin tools help you to protect and powerup your group."
             f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -454,12 +455,8 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/TodorokiLogs"),
-                    InlineKeyboardButton(text="ғᴀɴᴛᴀsʏ ᴠɪʀᴛᴜᴀʟ", url="t.me/fantasyvirtual"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/todorokisupportgrup"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/todorokiproject"),
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/lunasupportgroup"),
+                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/aboutraks"),
                  ],
                  [
                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp"),
@@ -470,8 +467,8 @@ def luna_about_callback(update, context):
         )
     elif query.data == "luna_credit":
         query.message.edit_text(
-            text=f"<b> `Cʀᴇᴅɪᴛ Fᴏʀ Tᴏᴅᴏʀᴏᴋɪ Dᴇᴠ's` </b>\n"
-            f"\nHᴇʀᴇ Sᴏᴍᴇ Dᴇᴠᴇʟᴏᴘᴇʀs Hᴇʟᴘɪɴɢ Iɴ Mᴀᴋɪɴɢ Tʜᴇ ᴛᴏᴅᴏʀᴏᴋɪXʀᴏʙᴏᴛ",
+            text=f"<b> `Cʀᴇᴅɪᴛ Fᴏʀ Lᴜɴᴀ Dᴇᴠ's` </b>\n"
+            f"\nHᴇʀᴇ Sᴏᴍᴇ Dᴇᴠᴇʟᴏᴘᴇʀs Hᴇʟᴘɪɴɢ Iɴ Mᴀᴋɪɴɢ Tʜᴇ Lᴜɴᴀ",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -480,7 +477,7 @@ def luna_about_callback(update, context):
                     InlineKeyboardButton(text="ᴀʟɪɴᴀ", url="t.me/rizexx"),
                  ],
                  [
-                    InlineKeyboardButton(text="Tᴏᴅᴏʀᴏᴋɪ", url="t.me/tdrki_1"),
+                    InlineKeyboardButton(text="ʟᴜɴᴀ", url="t.me/tdrki_1"),
                  ],
                  [
                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp"),
@@ -496,7 +493,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi.. ɪ'ᴀᴍ ᴛᴏᴅᴏʀᴏᴋɪ*
+            text=""" Hi.. ɪ'ᴀᴍ Lᴜɴᴀ*
                  \nHere is the [sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ](https://www Xhamster.com) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
