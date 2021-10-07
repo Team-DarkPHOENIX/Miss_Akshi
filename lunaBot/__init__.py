@@ -98,6 +98,7 @@ if ENV:
     ARQ_API_URL = "https://thearq.tech"
     ARQ_API_KEY = "AKOMNF-MEOOFM-EKMPFC-HIKRXK-ARQ"
     LOG_GROUP_ID = os.environ.get("LOG_GROUP_ID", None)
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -174,6 +175,7 @@ else:
     ARQ_API_URL = Config.ARQ_API_URL
     ARQ_API_KEY = Config.ARQ_API_KEY
     LOG_GROUP_ID = Config.LOG_GROUP_ID
+    BOT_USERNAME = Config.BOT_USERNAME
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
