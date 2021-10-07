@@ -35,7 +35,7 @@ from lunaBot.core.keyboard import ikb
 from lunaBot.core.tasks import _get_tasks_text, all_tasks, rm_task
 from lunaBot.core.types import InlineQueryResultCachedDocument
 from lunaBot.modules.info import get_chat_info, get_user_info
-from lunaBot.modules.media import download_youtube_audio
+from lunaBot.modules.music import download_youtube_audio
 from lunaBot.utils.functions import test_speedtest
 from lunaBot.utils.pastebin import paste
 
