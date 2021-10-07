@@ -1,26 +1,3 @@
-"""
-MIT License
-
-Copyright (c) 2021 TheHamkerCat
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
 from asyncio import gather
 from datetime import datetime, timedelta
 from io import BytesIO
@@ -37,14 +14,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 
 from lunaBot import aiohttpsession as aiosession
-from lunaBot.utils.dbfunctions import start_restart_stage
 from lunaBot.utils.http import get, post
-
-
-async def restart(m: Message):
-    if m:
-        await start_restart_stage(m.chat.id, m.message_id)
-    execvp(executable, [executable, "-m", "lunaBot"])
 
 
 def generate_captcha():
@@ -86,7 +56,9 @@ def generate_captcha():
     for t in range(4):
         letter = gen_letter()
         correct_answer += letter
-        draw.text((60 * t + 50, 15), letter, font=font, fill=rndColor2())
+        draw.text(
+            (60 * t + 50, 15), letter, font=font, fill=rndColor2()
+        )
     image = image.filter(ImageFilter.BLUR)
     image.save(file, "jpeg")
     return [file, correct_answer, wrong_answers]
@@ -145,7 +117,10 @@ async def calc_distance_from_ip(ip1: str, ip2: str) -> float:
     lat2, lon2 = radians(float(lat2)), radians(float(lon2))
     dlon = lon2 - lon1
     dlat = lat2 - lat1
-    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    a = (
+        sin(dlat / 2) ** 2
+        + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    )
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     distance = Radius_Earth * c
     return distance
@@ -161,7 +136,9 @@ def get_urls_from_text(text: str) -> bool:
 
 async def time_converter(message: Message, time_value: str) -> int:
     unit = ["m", "h", "d"]  # m == minutes | h == hours | d == days
-    check_unit = "".join(list(filter(time_value[-1].lower().endswith, unit)))
+    check_unit = "".join(
+        list(filter(time_value[-1].lower().endswith, unit))
+    )
     currunt_time = datetime.now()
     time_digit = time_value[:-1]
     if not time_digit.isdigit():
@@ -242,8 +219,10 @@ async def extract_user(message):
 def get_file_id_from_message(
     message,
     max_file_size=3145728,
-    mime_types=["image/png", "image/jpeg"],
+    mime_types=None,
 ):
+    if mime_types is None:
+        mime_types = ["image/png", "image/jpeg"]
     file_id = None
     if message.document:
         if int(message.document.file_size) > max_file_size:
@@ -251,7 +230,7 @@ def get_file_id_from_message(
 
         mime_type = message.document.mime_type
 
-        if mime_types and mime_type not in mime_types:
+        if mime_type not in mime_types:
             return
         file_id = message.document.file_id
 
