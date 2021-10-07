@@ -74,3 +74,4 @@ cloudscraper
 pendulum
 pykeyboard
 aiohttp[speedups]
+youtube_dl
