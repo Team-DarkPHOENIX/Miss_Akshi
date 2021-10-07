@@ -1,26 +1,3 @@
-"""
-MIT License
-
-Copyright (c) 2021 TheHamkerCat
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
 from __future__ import unicode_literals
 
 import os
@@ -34,15 +11,13 @@ import youtube_dl
 from pyrogram import filters
 
 from lunaBot import aiohttpsession as session
-from lunaBot import app, arq
-from lunaBot.core.decorators.errors import capture_err
+from lunaBot.modules.memek import arq
+from lunaBot import pbot as app
+from lunaBot.utils.errors import capture_err
 from lunaBot.utils.pastebin import paste
 
-__MODULE__ = "Music"
-__HELP__ = """
-/ytmusic [link] To Download Music From Various Websites Including Youtube. [SUDOERS]
-/saavn [query] To Download Music From Saavn.
-/lyrics [query] To Get Lyrics Of A Song.
+__mod_name__ = "Media"
+__help__ = """
 """
 
 is_downloading = False
@@ -79,7 +54,9 @@ def download_youtube_audio(url: str):
             audio_file = audio_file_opus
         thumbnail_url = info_dict["thumbnail"]
         thumbnail_file = (
-            basename + "." + get_file_extension_from_url(thumbnail_url)
+            basename
+            + "."
+            + get_file_extension_from_url(thumbnail_url)
         )
         title = info_dict["title"]
         performer = info_dict["uploader"]
@@ -92,7 +69,9 @@ def download_youtube_audio(url: str):
 async def music(_, message):
     global is_downloading
     if len(message.command) != 2:
-        return await message.reply_text("/ytmusic needs a link as argument")
+        return await message.reply_text(
+            "/ytmusic needs a link as argument"
+        )
     url = message.text.split(None, 1)[1]
     if is_downloading:
         return await message.reply_text(
@@ -149,7 +128,9 @@ async def download_song(url):
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        return await message.reply_text("/saavn requires an argument.")
+        return await message.reply_text(
+            "/saavn requires an argument."
+        )
     if is_downloading:
         return await message.reply_text(
             "Another download is in progress, try again after sometime."
@@ -187,7 +168,7 @@ async def jssong(_, message):
 # Lyrics
 
 
-@app.on_message(filters.command("lyrics"))
+@app.on_message(filters.command("lyricz"))
 async def lyrics_func(_, message):
     if len(message.command) < 2:
         return await message.reply_text("**Usage:**\n/lyrics [QUERY]")
