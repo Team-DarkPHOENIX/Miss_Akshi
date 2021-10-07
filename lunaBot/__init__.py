@@ -9,6 +9,7 @@ from aiohttp import ClientSession
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
+from Python_ARQ import ARQ
 
 StartTime = time.time()
 
@@ -93,8 +94,9 @@ if ENV:
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
+    ARQ_API_URL = "https://thearq.tech"
+    ARQ_API_KEY = "AKOMNF-MEOOFM-EKMPFC-HIKRXK-ARQ"
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -168,7 +170,9 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    
+    ARQ_API_URL = Config.ARQ_API_URL
+    ARQ_API_KEY = Config.ARQ_API_KEY
+
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
     except ValueError:
@@ -196,6 +200,8 @@ pbot = Client("lunaBot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 print("[INFO]: INITIALZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
