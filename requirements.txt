@@ -76,3 +76,4 @@ pykeyboard
 aiohttp[speedups]
 youtube_dl
 fuzzysearch
+Python_ARQ
