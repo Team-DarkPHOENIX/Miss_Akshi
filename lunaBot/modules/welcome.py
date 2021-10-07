@@ -262,6 +262,32 @@ def new_member(update: Update, context: CallbackContext):
                 )
                 continue
 
+           # make kontol asu
+           elif new_mem.id == bot.id:
+                update.effective_message.reply_text(
+                        "❤️ <b>Thanks for adding me to the group!</b>\n\n<b>Promote me as administrator of the group, otherwise I will not be able to work properly.</b>",
+                        reply_markup=InlineKeyboardMarkup(
+                            [
+                                {
+                                    InlineKeyboardButton(
+                                        text="ɢᴏ ɪɴʟɪɴᴇ​!",
+                                        switch_inline_query_current_chat=""),
+                                    InlineKeyboardButton(
+                                        text="sᴜᴘᴘᴏʀᴛ​",
+                                        url="https://t.me/lunasupportgroup",
+                                    )
+                                }
+                            ]
+                        ),
+                        parse_mode=ParseMode.HTML,
+                        reply_to_message_id=reply,
+                    )
+                bot.send_message(
+                    JOIN_LOGGER,
+                    "I have been added to {} with \nID: <pre>{}</pre>".format(
+                        chat.title, chat.id),
+                    parse_mode=ParseMode.HTML)
+
             # Welcome yourself
             elif new_mem.id == bot.id:
                 creator = None
