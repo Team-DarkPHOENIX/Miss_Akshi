@@ -13,7 +13,7 @@
 
 <p align="center"><a href="https://t.me/innexiaBot"><img src="(https://telegra.ph/file/e641d3dd2ccdce6a3d934.jpg)" width="400"></a></p>
 
-#### Available on Telegram as [@LunaRobot](https://t.me/lunatapibot)
+### Available on Telegram as [@LunaRobot](https://t.me/lunatapibot)
 
 ### DEPLOY TO HEROKU⤵️
 The easiest way to deploy this Bot is via Heroku.
