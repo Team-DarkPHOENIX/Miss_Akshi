@@ -161,25 +161,31 @@ url = 'https://graphql.anilist.co'
 @run_async
 def airing(update: Update, context: CallbackContext):
     message = update.effective_message
-    search_str = message.text.split(' ', 1)
+    search_str = message.text.split(" ", 1)
     if len(search_str) == 1:
         update.effective_message.reply_text(
-            'Tell Anime Name :) ( /airing <anime name>)')
+            'Format : /airing < anime name >', parse_mode=ParseMode.MARKDOWN
+        )
         return
-    variables = {'search': search_str[1]}
+    variables = {"search": search_str[1]}
     response = requests.post(
-        url, json={
-            'query': airing_query,
-            'variables': variables
-        }).json()['data']['Media']
+        url, json={"query": airing_query, "variables": variables}
+    ).json()["data"]["Media"]
+    info = response.get("siteUrl")
+    image = info.replace("anilist.co/anime/", "img.anili.st/media/")
     msg = f"*Name*: *{response['title']['romaji']}*(`{response['title']['native']}`)\n*ID*: `{response['id']}`"
-    if response['nextAiringEpisode']:
-        time = response['nextAiringEpisode']['timeUntilAiring'] * 1000
+    if response["nextAiringEpisode"]:
+        time = response["nextAiringEpisode"]["timeUntilAiring"] * 1000
         time = t(time)
         msg += f"\n*Episode*: `{response['nextAiringEpisode']['episode']}`\n*Airing In*: `{time}`"
     else:
-        msg += f"\n*Episode*:{response['episodes']}\n*Status*: `N/A`"
-    update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
+        msg += f"\n*Episode*: `{response['episodes']}`\n*Status*: `N/A`"
+        buttons = [[InlineKeyboardButton("More Info", url=info)]]
+    update.effective_message.reply_photo(
+        photo=image, 
+        caption=msg, 
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=InlineKeyboardMarkup(buttons))
 
 
 @run_async
