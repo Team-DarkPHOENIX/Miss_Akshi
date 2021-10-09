@@ -456,7 +456,7 @@ def luna_about_callback(update, context):
                 [
                  [
                     InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/lunasupportgroup"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/aboutraks"),
+                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/lunaupdate"),
                  ],
                  [
                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp"),
@@ -473,11 +473,15 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ʀx", url="t.me/shutupbitchesss"),
-                    InlineKeyboardButton(text="ᴀʟɪɴᴀ", url="t.me/rizexx"),
+                    InlineKeyboardButton(text="ᴀʟɪɴᴀ", url="https://t.me/rizexx"),
+                    InlineKeyboardButton(text="ɴᴀᴏ", url="https://t.me/xgothboi"),
                  ],
                  [
-                    InlineKeyboardButton(text="ʟᴜɴᴀ", url="t.me/tdrki_1"),
+                    InlineKeyboardButton(text="ʏᴜɪ", url="https://t.me/Badboyanim"),
+                    InlineKeyboardButton(text="ʀx", url="https://t.me/shutupbitchesss"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="ʟᴜɴᴀ", url="https://t.me/tdrki_1"),
                  ],
                  [
                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp"),
