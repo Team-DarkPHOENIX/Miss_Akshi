@@ -279,7 +279,7 @@ async def inuka(client, message):
 
 
 @luna.on_message(
-    filters.regex("Luna|lonte|lina|kiw|kontol")
+    filters.regex("luna|lonte|lina|kiw|kontol")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
