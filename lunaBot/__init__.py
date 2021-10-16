@@ -96,7 +96,7 @@ if ENV:
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     ARQ_API_URL = "https://thearq.tech"
-    ARQ_API_KEY = "AKOMNF-MEOOFM-EKMPFC-HIKRXK-ARQ"
+    ARQ_API_KEY = "ZWXCEZ-RTVXHT-NOVURC-FHCFZD-ARQ"
     LOG_GROUP_ID = os.environ.get("LOG_GROUP_ID", None)
     BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
@@ -184,8 +184,8 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1200780834)
-DEV_USERS.add(797768146)
+DEV_USERS.add(1963422158)
+DEV_USERS.add(1817146787)
 
 if not SPAMWATCH_API:
     sw = None
