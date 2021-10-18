@@ -24,5 +24,6 @@ async def awake(event):
 @MEMEK(pattern=("/reload"))
 async def reload(event):
   tai = event.sender.first_name
-  text = "✅ **bot restarted successfully**\n\n• Admin list has been **updated**"
-  await tbot.send_message(event.chat_id, text)
+  LUNA = "✅ **bot restarted successfully**\n\n• Admin list has been **updated**"
+  BUTTON = [[Button.url("📡 ᴜᴘᴅᴀᴛᴇs", "https://t.me/lunaupdate")]]
+  await tbot.send_file(event.chat_id, PHOTO, caption=LUNA,  buttons=BUTTON)
