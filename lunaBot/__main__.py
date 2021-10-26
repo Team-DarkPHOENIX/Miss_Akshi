@@ -75,12 +75,14 @@ def get_readable_time(seconds: int) -> str:
 LUNA_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
 
 PM_START_TEXT = """
-🌻 `ʜᴀɪ ᴛʜᴇʀᴇ ɪ'ᴍ` [ʟᴜɴᴀ.](https://t.me/lunatapibot)
-════════════════════════
-`ʟᴜɴᴀ ɪs sᴘᴇᴄɪᴀʟʟʏ ᴍᴀᴅᴇ ʙʏ` [ᴢᴇɪɴᴢᴏ](https://t.me/zeinzo_1) `ᴛᴏ ᴋᴇᴇᴘ ᴡᴏᴍᴇɴ ᴀᴡᴀʏ ғʀᴏᴍ ᴛʜᴇ ᴍɪʟʟɪᴏɴs ᴏғ ʙᴀᴅ ɢᴜʏs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ`
-════════════════════════
-`Click the button below to learn more how to use me.`
-════════════════════════
+🌻 **hey I am Luna Robot**
+️➖➖➖➖➖➖➖➖➖➖➖➖➖
+**I will protect women from the millions of assholes in your group.**
+️➖➖➖➖➖➖➖➖➖➖➖➖➖
+**• manage with by :** [zeinzo](t.me/tdrki_1
+**• Thanks To :** [Team Luna](t.me/lunasupportgroup)
+️➖➖➖➖➖➖➖➖➖➖➖➖➖
+🔻 **Click the button below for more.**
 """
 
 buttons = [
