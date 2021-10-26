@@ -75,7 +75,7 @@ def get_readable_time(seconds: int) -> str:
 LUNA_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
 
 PM_START_TEXT = """
-🌻 **hey I am Luna Robot**
+[🌻](https://telegra.ph/file/0c2a0b2fcc43d17cbb3c1.jpg) **hey I am Luna Robot**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
 **I will protect women from the millions of assholes in your group.**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
