@@ -77,7 +77,7 @@ LUNA_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
 PM_START_TEXT = """
 [🌻](https://telegra.ph/file/0c2a0b2fcc43d17cbb3c1.jpg) **hey I am Luna Robot**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
-**I will protect women from the millions of assholes in your group.**
+**I'm a Powerfull Group Manager Bot With Cool Modules. feel free to add me to your groups!**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
 **• manage with by :** [zeinzo](t.me/tdrki_1)\n**• Thanks To :** [Team Luna](t.me/lunasupportgroup)
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
