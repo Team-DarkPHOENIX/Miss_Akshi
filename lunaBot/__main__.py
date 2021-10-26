@@ -79,8 +79,7 @@ PM_START_TEXT = """
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
 **I will protect women from the millions of assholes in your group.**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
-**• manage with by :** [zeinzo](t.me/tdrki_1
-**• Thanks To :** [Team Luna](t.me/lunasupportgroup)
+**• manage with by :** [zeinzo](t.me/tdrki_1)\n**• Thanks To :** [Team Luna](t.me/lunasupportgroup)
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
 🔻 **Click the button below for more.**
 """
