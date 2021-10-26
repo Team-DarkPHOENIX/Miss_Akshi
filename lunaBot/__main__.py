@@ -75,7 +75,7 @@ def get_readable_time(seconds: int) -> str:
 LUNA_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
 
 PM_START_TEXT = """
-[🌻](https://telegra.ph/file/e38e9af544bafa53a3b3b.jpg) `ʜᴀɪ ᴛʜᴇʀᴇ ɪ'ᴍ` [ʟᴜɴᴀ.](https://t.me/lunatapibot)
+🌻 `ʜᴀɪ ᴛʜᴇʀᴇ ɪ'ᴍ` [ʟᴜɴᴀ.](https://t.me/lunatapibot)
 ════════════════════════
 `ʟᴜɴᴀ ɪs sᴘᴇᴄɪᴀʟʟʏ ᴍᴀᴅᴇ ʙʏ` [ᴢᴇɪɴᴢᴏ](https://t.me/zeinzo_1) `ᴛᴏ ᴋᴇᴇᴘ ᴡᴏᴍᴇɴ ᴀᴡᴀʏ ғʀᴏᴍ ᴛʜᴇ ᴍɪʟʟɪᴏɴs ᴏғ ʙᴀᴅ ɢᴜʏs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ`
 ════════════════════════
@@ -363,7 +363,7 @@ def luna_about_callback(update, context):
                  \n I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n I check for admins' permissions before executing any command and more stuffs
                  \n\n_Luna's licensed under the GNU General Public License v3.0_
-                 \n❍ Awesome Bots @aboutraks
+                 \n❍ Awesome Bots @lunaupdate
                  \n❍ Support Group @lunasupportgroup
                  \n❍ Assistant @LunaAssistant.
                  \nHere is the 💾[Repository.](https://github.com/zeinzo)""",
@@ -376,7 +376,7 @@ def luna_about_callback(update, context):
                             text="Bᴜɢ'ꜱ", url="t.me/lunasupportgroup"
                         ),
                         InlineKeyboardButton(
-                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/aboutraks"
+                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/lunaupdate"
                         ),
                     ],
                     [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_back")],
@@ -449,7 +449,7 @@ def luna_about_callback(update, context):
         )
     elif query.data == "luna_support":
         query.message.edit_text(
-            text="* Tᴏᴅᴏʀᴏᴋɪ support chats*"
+            text="* Luna support chats*"
             "\nJoin Support Group/Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
@@ -478,9 +478,6 @@ def luna_about_callback(update, context):
                  ],
                  [
                     InlineKeyboardButton(text="ʏᴜɪ", url="https://t.me/Badboyanim"),
-                    InlineKeyboardButton(text="ʀx", url="https://t.me/shutupbitchesss"),
-                 ],
-                 [
                     InlineKeyboardButton(text="ʟᴜɴᴀ", url="https://t.me/tdrki_1"),
                  ],
                  [
