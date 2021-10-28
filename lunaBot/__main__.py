@@ -91,7 +91,7 @@ buttons = [
     [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="luna_"),
         InlineKeyboardButton(
-            text="ʙᴀsɪᴄ ʜᴇʟᴘ", callback_data="luna_basichelp"
+            text="ᴍᴜsɪᴄ ᴘʟᴀʏ", callback_data="luna_basichelp"
         ),
     ],
     [
@@ -395,18 +395,20 @@ def luna_about_callback(update, context):
 
     elif query.data == "luna_basichelp":
         query.message.edit_text(
-            text=f"*Here's basic Help regarding* *How to use Me?*"
-            f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
-            f"\n• After adding promote me manually with full rights for faster experience.\n"
-            f"\n• Than send `/admincache@lunatapibot` in that chat to refresh admin list in My database.\n"
-            f"\n\n*All done now use below given button's to know about use!*\n"
+            text=f"**──「 Basic Guide 」──**"
+            f"\n\n1.) first, add me to your group.\n"
+            f"2.) then promote me as admin and give all permissions except anonymous admin.\n"
+            f"3.) after promoting me, type /reload in group to update the admin list.\n"
+            f"4.) add @LunaAssistant to your group or type /join to invite her.\n"
+            f"5.) turn on the video chat first before start to play music.\n"
+            f"*\n📌 if the userbot not joined to video chat, make sure if the video chat already turned on, or type /leave then type /join again."
             f"",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="luna_admin"),
+                    InlineKeyboardButton(text="ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="luna_admin"),
                     InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="luna_notes"),
                  ],
                  [
@@ -422,14 +424,14 @@ def luna_about_callback(update, context):
         )
     elif query.data == "luna_admin":
         query.message.edit_text(
-            text=f"*Let's make your group bit effective now*"
-            f"\nCongragulations, Luna now ready to manage your group."
-            f"\n\n*Admin Tools*"
-            f"\nBasic Admin tools help you to protect and powerup your group."
-            f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
-            f"\n\n*Welcome*"
-            f"\nLets set a welcome message to welcome new users coming to your group."
-            f"send `/setwelcome [message]` to set a welcome message!",
+            text=f"**──「 Basic Guide 」──**"
+            f"\n\n/play (song name) - play song from youtube"
+            f"\n/ytp (song name) - play song directly from"
+            f"\nB/stream (reply to audio) - play song using audio file."
+            f"\n/playlist - show the list song in queue"
+            f"\n/song (song name) - download song from youtube."
+            f"\n/search (video name) - search video from youtube detailed."
+            f"\n/lyric - (song name) lyrics scrapper",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
