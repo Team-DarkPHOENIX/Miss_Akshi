@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-LUNA_IMG = "https://telegra.ph/file/26ea030c390863debfcd9.jpg"
+LUNA_IMG = "https://telegra.ph/file/7c3c26e0ed938aec91209.jpg"
 
 PM_START_TEXT = """
 [🌻](https://telegra.ph/file/0c2a0b2fcc43d17cbb3c1.jpg) **hey I am Luna Robot**
