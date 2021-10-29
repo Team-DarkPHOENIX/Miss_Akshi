@@ -356,18 +356,14 @@ def luna_about_callback(update, context):
     query = update.callback_query
     if query.data == "luna_":
         query.message.edit_text(
-            text="""   ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ.
-                 \n I can restrict users.
-                 \n I can greet users with customizable welcome messages and even set a group's rules.
-                 \n I have an advanced anti-flood system.
-                 \n I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n I check for admins' permissions before executing any command and more stuffs
-                 \n\n_Luna's licensed under the GNU General Public License v3.0_
-                 \n❍ Awesome Bots @lunaupdate
-                 \n❍ Support Group @lunasupportgroup
-                 \n❍ Assistant @LunaAssistant.
-                 \nHere is the 💾[Repository.](https://github.com/zeinzo)""",
+            text="""Hi again! I'am a full-fledged group management bot built to help you manage your group easily.\n
+                    \nI can do lot of stuff, some of them are:
+                    \n• Restrict users who flood your chat using my anti-flood module.
+                    \n• Safeguard your group with the advanced and handy Antispam system.
+                    \n• Greet users with media + text and buttons, with proper formatting.
+                    \n• Save notes and filters with proper formatting and reply markup.\n
+                    \nNote: I need to be promoted with proper admin permissions to fuction properly.\n
+                    \nCheck Setup Guide to learn on setting up the bot and on help to learn more.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -412,7 +408,6 @@ def luna_about_callback(update, context):
                  ],
                  [
                     InlineKeyboardButton(text="📙 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="luna_support"),
-                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="luna_credit"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="luna_back"),
