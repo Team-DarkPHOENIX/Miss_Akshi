@@ -566,8 +566,8 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                     InlineKeyboardButton(text="Credits", callback_data="hrper_sex")
-                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_")
+                     InlineKeyboardButton(text="Credits", callback_data="hrper_sex"),
+                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_"),
                   ]
                 ]
             ),
