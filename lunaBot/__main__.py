@@ -441,11 +441,11 @@ def luna_about_callback(update, context):
     elif query.data == "luna_notes":
         query.message.edit_text(
             text=f"**──「 Admin CMD 」──**\n\n"
-            f"/start **(in group) - see the bot alive status**"
-            f"\n/reload - **reload bot and refresh the admin list**"
-            f"\n/ping - **check the bot ping status**"
-            f"\n\n/uptime - **check the bot uptime status**"
-            f"/id - **show the group/user id & other**",
+            f"/start (in group) - see the bot alive status"
+            f"\n/reload - reload bot and refresh the admin list"
+            f"\n/ping - check the bot ping status"
+            f"\n/uptime - check the bot uptime status"
+            f"\n/id - **show the group/user id & other**",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp")]]
