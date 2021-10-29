@@ -370,7 +370,7 @@ def luna_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ", url="t.me/lunasupportgroup"
+                            text="Setup Guide", callback_data="luna_aselole"
                         ),
                         InlineKeyboardButton(
                             text="Bᴏᴛ Lɪꜱᴛ", url="t.me/lunaupdate"
@@ -491,6 +491,20 @@ def luna_about_callback(update, context):
                  
                  ]
                 ]
+            ),
+        )
+
+    elif query.data == "luna_aselole":
+        query.message.edit_text(
+            text=f"｢ Setup Guide 」\n"
+                 f"\nYou can add me to your group by clicking this link and selecting the chat.\n"
+                 f"\nRead Admin Permissions and Anti-spam for basic info.\n"
+                 f"\nRead Detailed Setup Guide to learn about setting up the bot in detail. (Recommended)\n"
+                 f"\nIf you do need help with further instructions feel free to ask in @lunasupportgroup.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_")]]
             ),
         )
         
