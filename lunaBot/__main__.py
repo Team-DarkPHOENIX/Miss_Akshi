@@ -373,7 +373,7 @@ def luna_about_callback(update, context):
                             text="Setup Guide", callback_data="luna_aselole"
                         ),
                         InlineKeyboardButton(
-                            text="T & C", callback_data="hrper"
+                            text="T & C", callback_data="hrper_luna"
                         ),
                     ],
                     [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_back")],
@@ -550,7 +550,7 @@ def luna_about_callback(update, context):
             ),
         )
         
-      elif query.data == "hrper":
+      elif query.data == "hrper_luna":
         query.message.edit_text(
             text=f" ｢ Terms and Conditions 」\n"
                 f"\nTo use this bot, You need to agree with Terms and Conditions.\n"
@@ -585,7 +585,7 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="hrper"),
+                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="hrper_luna"),
                      InlineKeyboardButton(text="☎️ Support", url=f"https://t.me/lunasupportgroup"),
                   ]
                 ]
