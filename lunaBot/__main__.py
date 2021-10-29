@@ -373,7 +373,7 @@ def luna_about_callback(update, context):
                             text="Setup Guide", callback_data="luna_aselole"
                         ),
                         InlineKeyboardButton(
-                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/lunaupdate"
+                            text="T & C", callback_data="hrper"
                         ),
                     ],
                     [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_back")],
@@ -550,7 +550,48 @@ def luna_about_callback(update, context):
             ),
         )
         
+      elif query.data == "hrper":
+        query.message.edit_text(
+            text=f" ｢ Terms and Conditions 」\n"
+                f"\nTo use this bot, You need to agree with Terms and Conditions.\n"
+                f"\n✪ If someone is spamming your group, you can use report feature from your Telegram Client."
+                f"\n✪ Make sure antiflood is enabled, so that users cannot flood/spam your chat."
+                f"\n✪ Do not spam commands, buttons, or anything in bot PM, else you will be Ignored by bot or Gbanned."
+                f"\n✪ If you need to ask anything about this bot or you need help, reach us at @lunasupportgroup"
+                f"\n✪ Make sure you read rules and follow them when you join Support Chat."
+                f"\n✪ Spamming in Support Chat, will reward you GBAN and reported to Telegram as well.\n"
+                f"\nTerms & Conditions can be changed anytime.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                     InlineKeyboardButton(text="Credits", callback_data="hrper_sex")
+                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_")
+                  ]
+                ]
+            ),
+        )
         
+        
+      elif query.data == "hrper_sex":
+        query.message.edit_text(
+            text=f"**Luna is a powerful bot for managing groups with additional features.**\n"
+              f"\nLuna's Licensed Under The GNU (General Public License v3.0)\n"
+              f"\nIf you have any question about Luna,"
+              f"\nreach us at Support Chat.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="hrper"),
+                     InlineKeyboardButton(text="☎️ Support", url=f"https://t.me/lunasupportgroup"),
+                  ]
+                ]
+            ),
+        )   
+
 @run_async
 def Source_about_callback(update, context):
     query = update.callback_query
