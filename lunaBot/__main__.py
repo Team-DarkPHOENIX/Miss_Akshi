@@ -504,7 +504,49 @@ def luna_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_")]]
+                [
+                 [
+                    InlineKeyboardButton(text="Admins Permissions", callback_data="luna_asu"),
+                    InlineKeyboardButton(text="Anti Spam", callback_data="luna_asi"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_"),
+                 
+                 ]
+                ]
+            ),
+        )
+
+    elif query.data == "luna_asu":
+        query.message.edit_text(
+            text=f"｢ Admin Permissions 」\n"
+                     f"\nTo avoid slowing down, Luna caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), Luna will only find out ~10 minutes later.\n"
+                    f"\nIf you want to update them immediately, you can use the /admincache or /reload command, that'll force Luna to check who the admins are again and their permissions\n"
+                    f"\nIf you are getting a message saying:\nYou must be this chat administrator to perform this action!\n"
+                    f"\nThis has nothing to do with Luna's rights; this is all about YOUR permissions as an admin. Luna respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with Luna. Similarly, to change Luna settings, you need to have the Change group info permission.\n"
+                    f"\nThe message very clearly states that you need these rights - not Luna.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_aselole")]]
+            ),
+        )
+
+    elif query.data == "luna_asi":
+        query.message.edit_text(
+            text=f"｢ Anti-Spam Settings 」\n"
+                     f"\nAntispam: "
+                     f"\nBy enabling this, you can protect your groups free from scammers/spammers.\nRun /antispam on in your chat to enable.\nAppeal Chat: @lunasupportgroup\n"
+                     f"\n✪ Anti-Flood allows you to keep your chat clean from flooding."
+                     f"\n✪ With the help of Blaclists you can blacklist words,sentences and stickers which you don't want to be used by group members."
+                     f"\n✪ By enabling Reports, admins get notified when users reports in chat."
+                     f"\n✪ Locks allows you to lock/restrict some comman items in telegram world."
+                     f"\n✪ Warnings allows to warn users and set auto-warns. "
+                     f"\n✪ Welcome Mute helps you prevent spambots or users flooding/spamming your group. Checl Greetings for more info",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_aselole")]]
             ),
         )
         
