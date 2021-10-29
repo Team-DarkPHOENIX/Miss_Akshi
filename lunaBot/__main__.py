@@ -401,14 +401,14 @@ def luna_about_callback(update, context):
             f"3.) after promoting me, type /reload in group to update the admin list.\n"
             f"4.) add @LunaAssistant to your group or type /join to invite her.\n"
             f"5.) turn on the video chat first before start to play music.\n"
-            f"\n📌 if the userbot not joined to video chat, make sure if the video chat already turned on, or type /leave then type /join again.",
+            f"\n📌 if userbot doesn't join voice chat make sure voice chat is active, or type /leave then type /join again..",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="luna_admin"),
-                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="luna_notes"),
+                    InlineKeyboardButton(text="📗 ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="luna_admin"),
+                    InlineKeyboardButton(text="📘 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="luna_notes"),
                  ],
                  [
                     InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="luna_support"),
@@ -440,10 +440,11 @@ def luna_about_callback(update, context):
 
     elif query.data == "luna_notes":
         query.message.edit_text(
-            text=f"<b> Setting up notes</b>"
-            f"\nYou can save message/media/audio or anything as notes"
-            f"\nto get a note simply use # at the beginning of a word"
-            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            text=f"/start **(in group) - see the bot alive status**"
+            f"\n/reload **- reload bot and refresh the admin list**"
+            f"\n/ping **- check the bot ping status**"
+            f"\n\n/uptime **- check the bot uptime status**"
+            f"/id **- show the group/user id & other**",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp")]]
