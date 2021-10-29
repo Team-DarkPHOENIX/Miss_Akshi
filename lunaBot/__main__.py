@@ -440,7 +440,8 @@ def luna_about_callback(update, context):
 
     elif query.data == "luna_notes":
         query.message.edit_text(
-            text=f"/start **(in group) - see the bot alive status**"
+            text=f"**──「 Admin CMD 」──**\n\n"
+            f"/start **(in group) - see the bot alive status**"
             f"\n/reload **- reload bot and refresh the admin list**"
             f"\n/ping **- check the bot ping status**"
             f"\n\n/uptime **- check the bot uptime status**"
