@@ -408,10 +408,10 @@ def luna_about_callback(update, context):
                 [
                  [
                     InlineKeyboardButton(text="📗 ʙᴀsɪᴄ ᴄᴍᴅ", callback_data="luna_admin"),
-                    InlineKeyboardButton(text="📘 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="luna_notes"),
+                    InlineKeyboardButton(text="📘 ᴀᴅᴠᴀɴᴄᴇᴅ ᴄᴍᴅ", callback_data="luna_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="luna_support"),
+                    InlineKeyboardButton(text="📙 ᴀᴅᴍɪɴ ᴄᴍᴅ", callback_data="luna_support"),
                     InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="luna_credit"),
                  ],
                  [
@@ -440,12 +440,12 @@ def luna_about_callback(update, context):
 
     elif query.data == "luna_notes":
         query.message.edit_text(
-            text=f"**──「 Admin CMD 」──**\n\n"
+            text=f"──「 Advanced CMD 」──\n\n"
             f"/start (in group) - see the bot alive status"
             f"\n/reload - reload bot and refresh the admin list"
             f"\n/ping - check the bot ping status"
             f"\n/uptime - check the bot uptime status"
-            f"\n/id - **show the group/user id & other**",
+            f"\n/id - show the group/user id & other",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp")]]
@@ -453,15 +453,22 @@ def luna_about_callback(update, context):
         )
     elif query.data == "luna_support":
         query.message.edit_text(
-            text="* Luna support chats*"
-            "\nJoin Support Group/Channel",
+            text=f"──「 Admin CMD 」──"
+            f"/player - show the music playing status"
+            f"/pause - pause the music streaming"
+            f"/resume - resume the music was paused"
+            f"/skip - skip to the next song"
+            f"/end - stop music streaming"
+            f"/join - invite userbot join to your group"
+            f"/leave - order the userbot to leave your group"
+            f"/auth - authorized user for using music bot"
+            f"/unauth - unauthorized for using music bot"
+            f"/control - open the player settings panel"
+            f"/delcmd (on | off) - enable / disable del cmd feature"
+            f"/music (on / off) - disable / enable music player in your group",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/lunasupportgroup"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/lunaupdate"),
-                 ],
                  [
                     InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_basichelp"),
                  
