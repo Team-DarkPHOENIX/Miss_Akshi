@@ -401,8 +401,7 @@ def luna_about_callback(update, context):
             f"3.) after promoting me, type /reload in group to update the admin list.\n"
             f"4.) add @LunaAssistant to your group or type /join to invite her.\n"
             f"5.) turn on the video chat first before start to play music.\n"
-            f"*\n📌 if the userbot not joined to video chat, make sure if the video chat already turned on, or type /leave then type /join again."
-            f"",
+            f"\n📌 if the userbot not joined to video chat, make sure if the video chat already turned on, or type /leave then type /join again.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
