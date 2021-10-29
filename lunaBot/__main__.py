@@ -566,14 +566,14 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                     InlineKeyboardButton(text="Credits", callback_data="hrper_sex"),
+                     InlineKeyboardButton(text="Credits", callback_data="luna_angjay"),
                      InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="luna_"),
                   ]
                 ]
             ),
         )
 
-    elif query.data == "hrper_sex":
+    elif query.data == "luna_angjay":
         query.message.edit_text(
             text=f"Luna is a powerful bot for managing groups with additional features.\n"
               f"\nLuna's Licensed Under The GNU (General Public License v3.0)\n"
