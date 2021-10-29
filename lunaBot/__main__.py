@@ -575,7 +575,7 @@ def luna_about_callback(update, context):
 
     elif query.data == "hrper_sex":
         query.message.edit_text(
-            text=f"**Luna is a powerful bot for managing groups with additional features.**\n"
+            text=f"Luna is a powerful bot for managing groups with additional features.\n"
               f"\nLuna's Licensed Under The GNU (General Public License v3.0)\n"
               f"\nIf you have any question about Luna,"
               f"\nreach us at Support Chat.",
