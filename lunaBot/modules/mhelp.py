@@ -17,7 +17,7 @@ async def awake(event):
   LUNA += "• /search ** (song/video title) – To search for links on YouTube with details** \n"
   LUNA += "• /playlist - **show the list song in queue** \n"
   LUNA += "•/lyric - ** (song name) lyrics scrapper** \n\n"
-  LUNA += "** ──「 Admin CMD 」── **"
+  LUNA += "** ──「 Admin CMD 」── ** \n\n"
   LUNA += "• /pause - **To Pause Song playback** \n"
   LUNA += "• /resume - **To resume playback of the paused Song** \n"
   LUNA += "• /skip - **To Skip playback of the song to the next Song** \n"
