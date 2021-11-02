@@ -17,8 +17,7 @@ from lunaBot.utils.errors import capture_err
 from lunaBot.utils.pastebin import paste
 
 __mod_name__ = "Media"
-__help__ = """
-"""
+
 
 is_downloading = False
 
