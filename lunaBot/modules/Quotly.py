@@ -391,8 +391,3 @@ async def q(event):
     
 __mod_name__ = "ϙᴜᴏᴛʟʏ"
 
-__help__ = """
-⚙️ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱:
-❍ /q [in response to the message]
-❍ make a quote from the message!
-"""
