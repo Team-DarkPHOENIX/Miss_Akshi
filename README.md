@@ -7,9 +7,9 @@
 <p align='center'>
   <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=flat-square&logo=python&color=blue" /> </a>
   <a href="https://github.com/zeinzo/LunaRobotV2/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" /> </a>
-  <a href="https://t.me/abotraks"><img src="https://img.shields.io/badge/Join-Todoroki%20Updates-red.svg?logo=Telegram"></a>
-  <a href="t.me/lunasupportgroup"><img src="https://img.shields.io/badge/Join-Todoroki%20Support-blue.svg?logo=telegram"></a>
-  <a href="t.me/tdrki_1"><img src="https://img.shields.io/badge/Developer-Todoroki%20Robot-blue.svg?logo=github"></a>
+  <a href="https://t.me/lunaupdate"><img src="https://img.shields.io/badge/Join-Luna%20Updates-red.svg?logo=Telegram"></a>
+  <a href="t.me/lunasupportgroup"><img src="https://img.shields.io/badge/Join-Luna%20Support-blue.svg?logo=telegram"></a>
+  <a href="t.me/tdrki_1"><img src="https://img.shields.io/badge/Developer-Luna%20Robot-blue.svg?logo=github"></a>
 
 <p align="center"><a href="https://t.me/innexiaBot"><img src="(https://telegra.ph/file/e641d3dd2ccdce6a3d934.jpg)" width="400"></a></p>
 
