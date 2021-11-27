@@ -11,7 +11,6 @@
   <a href="t.me/lunasupportgroup"><img src="https://img.shields.io/badge/Join-Luna%20Support-blue.svg?logo=telegram"></a>
   <a href="t.me/tdrki_1"><img src="https://img.shields.io/badge/Developer-Luna%20Robot-blue.svg?logo=github"></a>
 
-<p align="center"><a href="https://t.me/innexiaBot"><img src="(https://telegra.ph/file/e641d3dd2ccdce6a3d934.jpg)" width="400"></a></p>
 
 ### Available on Telegram as [@LunaRobot](https://t.me/lunatapibot)
 
