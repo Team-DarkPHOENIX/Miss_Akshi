@@ -27,6 +27,6 @@ This Bot is Created by ZeinzoProject, If your kanging this without fork at least
 ## Credits Luna Robot💫
 
 - [Zeinzo](https://github/zeinzo) ``Dev``
-- [RIZ-EX](https://github.com/riz-ex) ``Contributor``
+- [RIZ-EX](https://github.com/riz-ex) ``Dev``
 - [Arya](https://github.com/aryazakaria01) ``Contributor``
 - [Original Repo](https://github.com/TeamDeeCode/innexia) ``Innexia``
