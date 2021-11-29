@@ -1,5 +1,5 @@
 {
-      "name": "innexiaBot",
+      "name": "Luna Robot",
       "description": "Telegram group management bot.",
       "logo": "https://telegra.ph/file/0c2a666a4d94ad1616593.jpg",
       "keywords": [
@@ -50,7 +50,7 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1956381927"
+         "value": "1885133444"
       },
       "BOT_ID": {
          "description": "Your bot ID.. Use any other bot to get it.",
@@ -115,7 +115,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": "1956381927"
+         "value": "1885133444"
       },
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
