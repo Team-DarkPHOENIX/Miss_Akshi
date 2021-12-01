@@ -4,7 +4,7 @@ from typing import Union
 
 from lunaBot.modules.helper_funcs.msg_types import Types
 from lunaBot.modules.sql import BASE, SESSION
-from sqlalchemy import BigBigInteger, Boolean, Column, BigInteger, String, UnicodeText
+from sqlalchemy import BigInteger, Boolean, Column, BigInteger, String, UnicodeText
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"
