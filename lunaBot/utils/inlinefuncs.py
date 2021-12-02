@@ -37,7 +37,7 @@ from lunaBot.core.types import InlineQueryResultCachedDocument
 from lunaBot.modules.info import get_chat_info, get_user_info
 from lunaBot.modules.music import download_youtube_audio
 from lunaBot.utils.functions import test_speedtest
-from lunaBot.utils.pastebin import paste
+from lunaBot.utils.pastebin import epaste, hpaste
 
 MESSAGE_DUMP_CHAT = LOG_GROUP_ID
 
