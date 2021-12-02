@@ -5,7 +5,6 @@ import re
 import random
 import aiofiles
 import requests
-import wikipedia
 
 from io import BytesIO
 from random import randint
@@ -186,48 +185,6 @@ def paste(update, context):
     else:
         msg.reply_text("Give me a text file to paste on hastebin")
         return
-    
-
-@typing_action
-def nekopaste(update, context):
-    msg = update.effective_message
-
-    if msg.reply_to_message and msg.reply_to_message.document:
-        file = context.bot.get_file(msg.reply_to_message.document)
-        file.download("file.txt")
-        text = codecs.open("file.txt", "r+", encoding="utf-8")
-        paste_text = text.read()
-        link = (
-            requests.post(
-                "https://nekobin.com/api/documents",
-                json={"content": paste_text},
-            )
-            .json()
-            .get("result")
-            .get("key")
-        )
-        text = "**Nekofied to Nekobin!!!**"
-        buttons = [
-            [
-                InlineKeyboardButton(
-                    text="View Link", url=f"https://nekobin.com/{link}"
-                ),
-                InlineKeyboardButton(
-                    text="View Raw",
-                    url=f"https://nekobin.com/raw/{link}",
-                ),
-            ]
-        ]
-        msg.reply_text(
-            text,
-            reply_markup=InlineKeyboardMarkup(buttons),
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-        )
-        os.remove("file.txt")
-    else:
-        msg.reply_text("Give me a text file to paste on nekobin")
-        return
 
 
 @typing_action
@@ -286,7 +243,6 @@ def spacepaste(update, context):
     )    
 
 PASTE_HANDLER = DisableAbleCommandHandler("hpaste", paste, run_async=True)
-NEKO_HANDLER = DisableAbleCommandHandler("npaste", nekopaste, run_async=True)
 SPASE_HANDLER = DisableAbleCommandHandler("spaste", spacepaste, run_async=True)
 
 dispatcher.add_handler(PASTE_HANDLER)
