@@ -12,6 +12,7 @@ from telegram.ext import (
     Filters,
     MessageHandler,
     RegexHandler,
+    run_async,
 )
 from telegram.utils.helpers import escape_markdown
 
