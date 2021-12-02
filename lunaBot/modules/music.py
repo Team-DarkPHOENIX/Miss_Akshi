@@ -14,7 +14,7 @@ from lunaBot import aiohttpsession as session
 from lunaBot.modules.memek import arq
 from lunaBot import pbot as app
 from lunaBot.utils.errors import capture_err
-from lunaBot.utils.pastebin import paste
+from lunaBot.utils.pastebin import epaste, hpaste
 
 __mod_name__ = "Media"
 
