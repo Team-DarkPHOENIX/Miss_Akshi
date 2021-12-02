@@ -8,6 +8,7 @@ from aiohttp import ClientSession
 
 import telegram.ext as tg
 from pyrogram import Client, errors
+from pyrogram.types import Message
 from telethon import TelegramClient
 from Python_ARQ import ARQ
 
