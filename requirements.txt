@@ -79,3 +79,5 @@ Python_ARQ
 httpx[http2]
 gpytranslate
 google-trans-new
+Pykeyboard
+Httpx
