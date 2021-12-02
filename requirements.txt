@@ -103,3 +103,4 @@ fuzzysearch
 PyYAML>5.0
 configparser
 apscheduler
+git+https://github.com/yt-dlp/yt-dlp@master
