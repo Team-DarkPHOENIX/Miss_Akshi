@@ -10,7 +10,7 @@ from pyrogram.types import Message
 from tswift import Song
 from yt_dlp import YoutubeDL
 from youtubesearchpython import SearchVideos
-from lunaBot.utils.pluginhelpers import get_text, progress
+from lunaBot.utils.pluginhelp import get_text, progress
 from lunaBot import pbot, arq
 
 async def lyrics_func(answers, text):
