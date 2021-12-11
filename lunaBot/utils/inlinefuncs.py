@@ -128,8 +128,8 @@ async def about_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "About"
     buttons.add(
-        InlineKeyboardButton("Support", url=f"https://t.me/lunasupportgroup"),
-        InlineKeyboardButton("Channel", url=f"https://t.me/lunaupdate"),
+        InlineKeyboardButton("Support", url=f"https://t.me/lunaXresso"),
+        InlineKeyboardButton("Channel", url=f"https://t.me/zeinproject"),
     )
 
     msg = f"""
