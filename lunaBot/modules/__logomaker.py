@@ -281,4 +281,4 @@ async def lego(event):
     if os.path.exists(fname):
             os.remove(fname)
  except Exception as e:
-    await event.reply(f'Error, Report @lunasupportgroup')
+    await event.reply(f'Error, Report @lunaXresso')
