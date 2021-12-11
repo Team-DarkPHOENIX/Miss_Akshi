@@ -25,5 +25,5 @@ async def awake(event):
   LUNA += "• /control - **open the player settings panel** \n"
   LUNA += "• /reload - **To Refresh admin list** \n"
 
-  BUTTON = [[Button.url("☎️ Support", "https://t.me/lunasupportgroup"), Button.url("📡 Updates", "https://t.me/ZeinzoProject")]]
+  BUTTON = [[Button.url("☎️ Support", "https://t.me/lunaXresso"), Button.url("📡 Updates", "https://t.me/ZeinzoProject")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=LUNA,  buttons=BUTTON)
