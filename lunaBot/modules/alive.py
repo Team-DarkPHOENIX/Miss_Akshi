@@ -18,12 +18,12 @@ async def awake(event):
   LUNA += f"🔴 **Telethon Version : {tlhver}** \n\n"
   LUNA += f"🔴 **Pyrogram Version : {pyrover}** \n\n"
   LUNA += "**Thanks For Adding Me Here ❤️**"
-  BUTTON = [[Button.url("ʜᴇʟᴘ", "https://t.me/lunatapibot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/lunasupportgroup")]]
+  BUTTON = [[Button.url("ʜᴇʟᴘ", "https://t.me/lunatapibot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/lunaXresso")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=LUNA,  buttons=BUTTON)
 
 @MEMEK(pattern=("/reload"))
 async def reload(event):
   tai = event.sender.first_name
   LUNA = "✅ **bot restarted successfully**\n\n• Admin list has been **updated**"
-  BUTTON = [[Button.url("📡 ᴜᴘᴅᴀᴛᴇs", "https://t.me/lunaupdate")]]
+  BUTTON = [[Button.url("📡 ᴜᴘᴅᴀᴛᴇs", "https://t.me/zeinproject")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=LUNA,  buttons=BUTTON)
