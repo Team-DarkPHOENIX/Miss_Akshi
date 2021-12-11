@@ -274,7 +274,7 @@ def new_member(update: Update, context: CallbackContext):
                                         switch_inline_query_current_chat=""),
                                     InlineKeyboardButton(
                                         text="sᴜᴘᴘᴏʀᴛ​",
-                                        url="https://t.me/lunasupportgroup",
+                                        url="https://t.me/lunaXresso",
                                     )
                                 }
                             ]
