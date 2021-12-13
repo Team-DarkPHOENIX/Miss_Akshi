@@ -7,8 +7,8 @@ import lunaBot.modules.sql.kuki_sql as sql
 
 from time import sleep
 from telegram import ParseMode
-from LunaBot import dispatcher, updater, SUPPORT_CHAT
-from LunaBot.modules.log_channel import gloggable
+from lunaBot import dispatcher, updater, SUPPORT_CHAT
+from lunaBot.modules.log_channel import gloggable
 from telegram import (CallbackQuery, Chat, MessageEntity, InlineKeyboardButton,
                       InlineKeyboardMarkup, Message, ParseMode, Update, Bot, User)
 
