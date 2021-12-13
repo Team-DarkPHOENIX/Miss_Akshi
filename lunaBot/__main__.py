@@ -72,46 +72,48 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-LUNA_IMG = "https://telegra.ph/file/7c3c26e0ed938aec91209.jpg"
+LUNA_IMG = "https://telegra.ph/file/0029f6059520da3a9e383.jpg"
 
 PM_START_TEXT = """
-**hey I am Luna Robot** [ㅤ](https://telegra.ph/file/1895e25b7f5e3e7bddfc4.jpg)
-️➖➖➖➖➖➖➖➖➖➖➖➖➖
-**I'm a Powerfull Group Manager Bot With Cool Modules. feel free to add me to your groups!**
-️➖➖➖➖➖➖➖➖➖➖➖➖➖
-☉ **Click the button below for more.**
+╭──────────────
+**Hey**🤞 {}, I am AKSHI🥀🍃[☘️](https://telegra.ph/file/ecb9b93a96b0b1a0c4c1b.jpg)
+**I am an Advanced Group Manager Bot, With Lots of Cool Features❤️.**
+`For More Information Use the Button Below or Send` /help 
+╰──────────────
 """
 
 buttons = [
-    [
-        InlineKeyboardButton(text="➕ Add Luna To Your group ➕", url="http://t.me/lunatapibot?startgroup=true"),
+        [
+        InlineKeyboardButton(
+            text="𝘈𝘥𝘥 𝘮𝘦 𝘯𝘰𝘸➕", url="t.me/Miss_AkshiV1_Bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="About", callback_data="luna_"),
+        InlineKeyboardButton(text="𝘔𝘪𝘴𝘴 𝘈𝘬𝘴𝘩𝘪 𝘭𝘰𝘨𝘴❤️", url=f"https://t.me/Miss_AkshiV1_logs"),
+    ],
+    [
         InlineKeyboardButton(
-            text="Music Player", callback_data="luna_basichelp"
+            text="𝘜𝘱𝘥𝘢𝘵𝘦𝘴🤞", url=f"https://t.me/Miss_AkshiV1_Updates"
+        ),
+        InlineKeyboardButton(
+            text="𝘚𝘶𝘱𝘱𝘰𝘳𝘵😍", url=f"https://t.me/Miss_AkshiV1_Support"
         ),
     ],
     [
-        
-        InlineKeyboardButton(
-            text="❓ Help&Commands", callback_data="help_back"),
+        InlineKeyboardButton(text="𝘏𝘦𝘭𝘱 𝘢𝘯𝘥 𝘊𝘮𝘥𝘴❓", callback_data="help_back"
+        ),
     ],
 ]
 
-
 HELP_STRINGS = """
-**Main commands:**  [ㅤ](https://telegra.ph/file/1895e25b7f5e3e7bddfc4.jpg)
-❂ /start: Starts me! You've probably already used this.
-❂ /help: Sends this message; I'll tell you more about myself.
-All commands can either be used with / or !.
-If you want to report any bugs or need any help with setting up Alina, reach us at here"""
-
-
-
-DONATE_STRING = """Hehe, senang mendengar Anda ingin menyumbang!
- [klick disini](https://t.me/zeinzo_1) ❤️
+`Click Buttons Below to Know My Features and CMDs...`
 """
+
+
+
+DONATE_STRING = """Heya, glad to hear you want to donate!
+ You can support the project via [Paypal](#) or by contacting @akshi_s_ashu1 \
+ Supporting isnt always financial! \
+ Those who cannot provide monetary support are welcome to help us develop the bot at."""
 
 IMPORTED = {}
 MIGRATEABLE = []
