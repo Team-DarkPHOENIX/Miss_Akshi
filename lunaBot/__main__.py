@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from lunaBot import (
+from professor import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -25,9 +25,9 @@ from lunaBot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from lunaBot.modules import ALL_MODULES
-from lunaBot.modules.helper_funcs.chat_status import is_user_admin
-from lunaBot.modules.helper_funcs.misc import paginate_modules
+from professor.modules import ALL_MODULES
+from professor.modules.helper_funcs.chat_status import is_user_admin
+from professor.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -126,7 +126,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("lunaBot.modules." + module_name)
+    imported_module = importlib.import_module("professor.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
