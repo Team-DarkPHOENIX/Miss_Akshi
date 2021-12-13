@@ -72,6 +72,8 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+LUNA_IMG = "https://telegra.ph/file/0029f6059520da3a9e383.jpg"
+
 PM_START_TEXT = """
 ╭──────────────
 **Hey**🤞 {}, I am AKSHI🥀🍃[☘️](https://telegra.ph/file/ecb9b93a96b0b1a0c4c1b.jpg)
@@ -109,10 +111,9 @@ HELP_STRINGS = """
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](#) or by contacting @akshi_s_ashu1 \
+ You can support the project via [Paypal](#) or by contacting @Professer_Ashu \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at."""
-
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
