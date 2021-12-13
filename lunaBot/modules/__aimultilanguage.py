@@ -18,8 +18,8 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 
-from lunaBot.modules.helper_funsc.filters import CustomFilters
-from lunaBot.modules.helper_funsc.chat_status import user_admin, user_admin_no_reply
+from lunaBot.modules.helper_funcs.filters import CustomFilters
+from lunaBot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
