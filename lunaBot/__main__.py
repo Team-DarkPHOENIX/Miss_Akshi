@@ -228,7 +228,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/lunaXresso")]]
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Miss_AkshiV1_Support")]]
             ),
         )
         
@@ -450,7 +450,7 @@ def luna_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="luna_basichelp")]]
             ),
         )
-    elif query.data == "luna_support":
+    elif query.data == "Miss_AkshiV1_Support":
         query.message.edit_text(
             text=f"──「 Admin CMD 」──\n"
             f"\n/player - show the music playing status"
