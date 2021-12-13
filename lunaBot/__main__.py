@@ -111,9 +111,11 @@ HELP_STRINGS = """
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](#) or by contacting @Professer_Ashu \
+ You can support the project via [Paypal](#) or by contacting @akshi_s_ashu1 \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at."""
+"""
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
