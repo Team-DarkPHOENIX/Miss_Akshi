@@ -275,5 +275,5 @@ async def apk(e):
         await e.reply("Exception Occured:- " + str(err))
 
 
-__mod_name__ = "sᴇᴀʀᴄʜ"
+__mod_name__ = "Search"
 
