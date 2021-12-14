@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from professor import (
+from lunaBot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -72,11 +72,11 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-LUNA_IMG = "https://telegra.ph/file/0029f6059520da3a9e383.jpg"
+LUNA_IMG = "https://telegra.ph/file/7c3c26e0ed938aec91209.jpg"
 
 PM_START_TEXT = """
 ╭──────────────
-**Hey**🤞 {}, I am AKSHI🥀🍃[☘️](https://telegra.ph/file/ecb9b93a96b0b1a0c4c1b.jpg)
+**Hey**🤞 **{message.from_user.first_name }** \n\n __ I am AKSHI🥀🍃[☘️](https://telegra.ph/file/ecb9b93a96b0b1a0c4c1b.jpg)
 **I am an Advanced Group Manager Bot, With Lots of Cool Features❤️.**
 `For More Information Use the Button Below or Send` /help 
 ╰──────────────
@@ -115,6 +115,12 @@ DONATE_STRING = """Heya, glad to hear you want to donate!
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at."""
 
+
+
+DONATE_STRING = """Hehe, senang mendengar Anda ingin menyumbang!
+ [klick disini](https://t.me/zeinzo_1) ❤️
+"""
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -126,7 +132,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("professor.modules." + module_name)
+    imported_module = importlib.import_module("lunaBot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -228,7 +234,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Miss_AkshiV1_Support")]]
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/lunaXresso")]]
             ),
         )
         
@@ -450,7 +456,7 @@ def luna_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="luna_basichelp")]]
             ),
         )
-    elif query.data == "Miss_AkshiV1_Support":
+    elif query.data == "luna_support":
         query.message.edit_text(
             text=f"──「 Admin CMD 」──\n"
             f"\n/player - show the music playing status"
