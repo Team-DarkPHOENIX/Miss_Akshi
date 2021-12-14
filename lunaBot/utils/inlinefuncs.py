@@ -141,7 +141,7 @@ Built with using python-telegram-bot v13.7 Running on Python 3.9.7
         InlineQueryResultArticle(
             title="About",
             description="About Akshi",
-            thumb_url="https://telegra.ph/file/a03660425cd749faf0a4a.jpg",
+            thumb_url="https://telegra.ph/file/d5d4ec2ccd00291f404f3.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
