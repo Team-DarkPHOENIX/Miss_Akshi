@@ -3,7 +3,7 @@ from professor.modules.disable import DisableAbleCommandHandler, DisableAbleMess
 from telegram import ParseMode
 from telegram.ext import run_async
 from telegram.error import BadRequest
-from professor.modules.helper_funsc.alternate import typing_action
+from lunaBot.modules.helper_funsc.alternate import typing_action
 
 normiefont = [
     "a",
