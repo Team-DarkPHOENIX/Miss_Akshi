@@ -493,8 +493,7 @@ def __stats__():
         sql.num_stickers_filters(), sql.num_stickers_filter_chats()
     )
 
-
-__mod_name__ = "S-ʙʟᴀᴄᴋʟɪsᴛ"
+__mod_name__ = "STCR BList🤕"
 
 BLACKLIST_STICKER_HANDLER = DisableAbleCommandHandler(
     "blsticker", blackliststicker, admin_ok=True
