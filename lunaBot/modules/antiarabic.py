@@ -4,10 +4,10 @@ from telegram import Update, Bot, ParseMode
 from telegram.ext import CallbackContext, CommandHandler, MessageHandler, Filters
 from telegram.ext.dispatcher import run_async
 
-from professor import dispatcher
-from professor.modules.helper_funsc.chat_status import user_not_admin, user_admin, can_delete
-from professor.modules.helper_funsc.extraction import extract_text
-from professor.modules.sql import antiarabic_sql as sql
+from lunaBot import dispatcher
+from lunaBot.modules.helper_funsc.chat_status import user_not_admin, user_admin, can_delete
+from lunaBot.modules.helper_funsc.extraction import extract_text
+from lunaBot.modules.sql import antiarabic_sql as sql
 
 ANTIARABIC_GROUPS = 12
 
