@@ -1,5 +1,5 @@
-from professor import dispatcher
-from professor.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from lunaBot import dispatcher
+from lunaBot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from telegram import ParseMode
 from telegram.ext import run_async
 from telegram.error import BadRequest
