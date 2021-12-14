@@ -146,5 +146,12 @@ async def deezer(_, message):
     await m.delete()
     
     
-__mod_name__ = "ᴍᴜsɪᴄ"
+__mod_name__ = "Songs🎵"
 
+__help__ = """
+• `/song`** <songname artist(optional)>: download the song in it's best quality available.(API BASED)
+• `/video`** <songname artist(optional)>: download the video song in it's best quality available.
+• `/deezer`** <songname>: download from deezer
+• `/lyrics`** <songname artist(optional)>: sends the complete lyrics of the song provided as input
+• `/glyrics`** <i> song name </i> : This plugin searches for song lyrics with song name and artist.
+"""
