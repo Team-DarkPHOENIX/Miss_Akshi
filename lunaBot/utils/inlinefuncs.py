@@ -30,10 +30,10 @@ from lunaBot import (
 )
 from lunaBot import pbot as app 
 from lunaBot import arq
-from lunaBot.services.keyboard import Ikb
+from lunaBot.core.keyboard import Ikb
 from lunaBot.utils.pluginhelper import convert_seconds_to_minutes as time_convert, fetch
-from lunaBot.services.tasks import _get_tasks_text, all_tasks, rm_task
-from lunaBot.services.types import InlineQueryResultCachedDocument
+from lunaBot.core.tasks import _get_tasks_text, all_tasks, rm_task
+from lunaBot.core.types.__init__ import InlineQueryResultCachedDocument
 from lunaBot.modules.info import get_chat_info, get_user_info
 from lunaBot.modules.music import download_youtube_audio
 from lunaBot.utils.functions import test_speedtest
