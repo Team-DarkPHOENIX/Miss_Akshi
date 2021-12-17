@@ -23,6 +23,7 @@ Pillow>=4.2.0
 CurrencyConverter
 tzlocal~=2.0
 #googletrans
+gpytranslate
 google_trans_new
 googletrans==3.1.0a0
 jikanpy
