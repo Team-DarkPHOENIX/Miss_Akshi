@@ -47,6 +47,7 @@ class Config(object):
     # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
     TIGERS = get_user_list("elevated_users.json", "1963422158")
     WOLVES = get_user_list("elevated_users.json", "1963422158")
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DONATION_LINK = None  # EG, paypal
     CERT_PATH = None
     MUST_JOIN = os.environ.get('MUST_JOIN', None)
