@@ -1,24 +1,17 @@
-import asyncio
 import logging
 import os
 import sys
-import json
-import asyncio
 import time
 import spamwatch
-import telegram.ext as tg
-
-from inspect import getfullargspec
+import aiohttp
 from aiohttp import ClientSession
-from Python_ARQ import ARQ
+
+import telegram.ext as tg
+from pyrogram import Client, errors
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
-from pyrogram.types import Message
-from pyrogram import Client, errors
-from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
-from pyrogram.types import Chat, User
-from ptbcontrib.postgres_persistence import 
+from Python_ARQ import ARQ
 
 StartTime = time.time()
 
