@@ -7,7 +7,7 @@ from pyrogram.types import (
 )
 
 # By @doreamon_music
-from LunaRobot.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
+from lunaBot.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
     bright,
@@ -15,7 +15,7 @@ from LunaRobot.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
     mix,
     normal_blur,
 )
-from LunaRobot.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from lunaBot.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
     cartoon,
     circle_with_bg,
     circle_without_bg,
@@ -25,13 +25,13 @@ from LunaRobot.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
     sepia_mode,
     sticker,
 )
-from LunaRobot.Addons.ImageEditor.edit_3 import (  # pylint:disable=import-error
+from lunaBot.Addons.ImageEditor.edit_3 import (  # pylint:disable=import-error
     black_border,
     blue_border,
     green_border,
     red_border,
 )
-from LunaRobot.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
+from lunaBot.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
     inverted,
     removebg_plain,
     removebg_sticker,
@@ -41,7 +41,7 @@ from LunaRobot.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
     rotate_270,
     round_sticker,
 )
-from LunaRobot.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
+from lunaBot.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
@@ -53,7 +53,7 @@ from LunaRobot.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from LunaRobot.pyrogramee.pyrogram import pbot as Client
+from lunaBot.pyrogramee.pyrogram import pbot as Client
 
 lel = 00000000
 # pylint:disable=import-error
