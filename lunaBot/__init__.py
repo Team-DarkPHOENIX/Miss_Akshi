@@ -9,6 +9,8 @@ from aiohttp import ClientSession
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
+from telethon.sessions import StringSession
+from telethon.sessions import 
 from Python_ARQ import ARQ
 
 StartTime = time.time()
@@ -100,6 +102,9 @@ if ENV:
     ARQ_API_KEY = "ZWXCEZ-RTVXHT-NOVURC-FHCFZD-ARQ"
     LOG_GROUP_ID = os.environ.get("LOG_GROUP_ID", None)
     BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
+    SESSION_STRING = os.environ.get("SESSION_STRING", None)
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
+    
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -177,6 +182,8 @@ else:
     ARQ_API_KEY = Config.ARQ_API_KEY
     LOG_GROUP_ID = Config.LOG_GROUP_ID
     BOT_USERNAME = Config.BOT_USERNAME
+    STRING_SESSION = Config.STRING_SESSION
+    SESSION_STRING = Config.SESSION_STRING
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
@@ -221,7 +228,13 @@ from lunaBot.modules.helper_funcs.handlers import (
     CustomMessageHandler,
     CustomRegexHandler,
 )
-
+##
+ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+try:
+    ubot2.start()
+except BaseException:
+    print("Userbot Error ! Have you added a STRING_SESSION in deploying??")
+    sys.exit(1)
 # make sure the regex handler can take extra kwargs
 tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
