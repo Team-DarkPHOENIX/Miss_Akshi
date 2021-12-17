@@ -646,9 +646,9 @@ def devlist(update: Update, context: CallbackContext):
 
 # `⚠️ Read from top`
 # Visit @{SUPPORT_CHAT} for more information.
-# """SUDO_HANDLER = CommandHandler(("addsudo", "adddragon"), addsudo)
+# """
 
-
+SUDO_HANDLER = CommandHandler(("addsudo", "adddragon"), addsudo)
 SUPPORT_HANDLER = CommandHandler(("addsupport", "adddemon"), addsupport)
 TIGER_HANDLER = CommandHandler(("addtiger"), addtiger)
 WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addwolf"), addwhitelist)
