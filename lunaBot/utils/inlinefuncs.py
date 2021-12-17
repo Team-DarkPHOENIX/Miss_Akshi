@@ -456,8 +456,8 @@ async def tg_search_func(answers, text, user_id):
 
 
 async def music_inline_func(answers, query):
-    chat_id = -1001574867550
-    group_invite = "https://t.me/TedeMusicCache"
+    chat_id = -1001657440126
+    group_invite = "https://t.me/Professer_Ashu"
     try:
         messages = [
             m
@@ -467,7 +467,7 @@ async def music_inline_func(answers, query):
         ]
     except Exception as e:
         print(e)
-        msg = f"You Need To Join Here With Your Bot And Userbot To Get Cached Music.\n{group_invite}"
+        msg = f"You Need To Join Here With Your Bot And Userbot To Get PROFESSOR MUSIC.\n{group_invite}"
         answers.append(
             InlineQueryResultArticle(
                 title="ERROR",
