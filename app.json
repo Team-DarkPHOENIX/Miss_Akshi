@@ -1,7 +1,7 @@
 {
-      "name": "Luna Robot",
+      "name": "Miss Akshi Robot",
       "description": "Telegram group management bot.",
-      "logo": "https://telegra.ph/file/5de0856707d87af934cb2.jpg",
+      "logo": "http://telegra.ph//file/84ecf4e9accbc1f9b5d3e.jpg",
       "keywords": [
          "telegram",
          "anime",
@@ -9,7 +9,7 @@
          "manager",
          "innexi"
       ],   
-   "repository": "https://github.com/zeinzo/LunaRobotV2.git",
+   "repository": "https://github.com/Team-DarkPHOENIX/Miss_Akshi",
    "addons": [
       {
          "options": {
