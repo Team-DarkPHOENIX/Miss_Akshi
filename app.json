@@ -121,6 +121,11 @@
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
          "value": ""
+      },
+      "STRING_SESSION": {
+         "description": "Get STRING_SESSION from @Get_String_bot choose telethon, used for telethon based modules.",
+         "required": true,
+         "value": ""
       }, 
       "STRICT_GBAN": {
          "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
